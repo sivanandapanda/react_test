@@ -17,7 +17,7 @@ test("button turns blue when clicked", () => {
   });
   fireEvent.click(colorButton);
   expect(colorButton).toHaveStyle({ backgroundColor: "Midnight Blue" });
-  expect(colorButton.textContent).toBe("Change to Medium Violet Red");
+  expect(colorButton).toHaveTextContent("Change to Medium Violet Red");
 });
 
 test("initial conditions", () => {
@@ -40,7 +40,7 @@ test("button should be disabled when checkbox is checked", () => {
 
   fireEvent.click(checkbox);
   expect(checkbox).toBeChecked();
-  expect(colorButton).not.toBeEnabled();
+  expect(colorButton).toBeDisabled();
 
   fireEvent.click(checkbox);
   expect(checkbox).not.toBeChecked();
